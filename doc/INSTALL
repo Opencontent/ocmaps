@@ -1,0 +1,9 @@
+=================================
+ Come installare
+=================================
+
+1. Copiare l'etensione della direcotory extensione dell'installazione di ezpublish
+2. Per usare il template standard copiare override.ini.append.php_copy_in_your_override nella direcotory override del progetto ez
+3. Installare l'estensione ocutils
+4. Installare l'estensione ocbootstrap per una formattazione automatica dei contenuti
+5. Attivare l'estensione

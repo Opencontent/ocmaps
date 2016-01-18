@@ -1,0 +1,15 @@
+<?php /* #?ini charset="utf-8"?
+
+[full_mappa]
+Source=node/view/full.tpl
+MatchFile=full/ocmaps.tpl
+Subdir=templates
+Match[class_identifier]=mappa
+
+[line_mappa]
+Source=node/view/line.tpl
+MatchFile=line/folder.tpl
+Subdir=templates
+Match[class_identifier]=mappa
+
+*/ ?>

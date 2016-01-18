@@ -1,0 +1,37 @@
+
+/* altezza di default delle mappa */
+#map {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-markers-text{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.legenda{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.legenda-markers-icon{
+    width: 15px;
+    height: auto;
+    margin-right: 3px;
+}
+
+.legenda-markers-text{
+
+}
+
+.legenda-markers-count{
+    margin-right: 8px;
+}
+
+#geoDataStatusSelect{
+    width: 100%;
+    margin-bottom: 20px;
+}
