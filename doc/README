@@ -2,7 +2,7 @@
  OCMaps extension
 =================================
 
-L'estensione ocMaps visualizza una mappa di OpenStreetMap sulla quale è possible posizione uno o più markers.
+L'estensione ocmaps visualizza una mappa di OpenStreetMap, sulla quale è possible posizione uno o più markers.
 L'utilizzo più semplice è quello di creare un oggetto di tipo "mappa" (la classe si trova nella directory doc dell'estensione)
 e definire come suoi sotto-elementi oggetti di un tipo qualsiasi. Se questi oggetti hanno almeno un attributo geo (GMap Location), automaticamente questi oggetti
 vengono visualizzati come markers sulla mappa. L'attributo "name" dell'oggetto viene mostrato come popup del singolo marker.
@@ -17,14 +17,13 @@ Attributi importanti della classe Mappa
  - description = descrizione completa che viene mostrata in un div dopo la mappa
  - allowed_child_class_name = nome della classe dei sotto-elementi che vengono visualizzati come marker sulla mappa
  - map_height = altezza della mappa (la larghezza è responsiva)
- - child_geo_attribute_name = attributo della classe dei sotto-elementi di tipo "GMap Location" [deafault "geo"]
- - child_popup_attribute_name = attributo facoltativo in cui indicare l'identificativo dell'attributo dei sotto-elementi che viene mostrato come popup del marker. [deafault "name"]
- - child_status_attribute_name = attributo facoltativo in cui indicare l'identificativo dell'attributo dei sotto-elementi che viene usato per definire lo stato del marker. [deafault "status"]
+ - child_geo_attribute_name = attributo della classe dei sotto-elementi di tipo "GMap Location"
+ - child_popup_attribute_name = attributo facoltativo in cui indicare l'identificativo dell'attributo dei sotto-elementi che viene mostrato come popup del marker. Di default viene usato "name"
+ - child_status_attribute_name = attributo facoltativo in cui indicare l'identificativo dell'attributo dei sotto-elementi che viene usato per definire lo stato del marker. Di default viene usato "status"
  - show_link_in_popup = checkbox: se si mette il segno di spunta la stringa mostrata nella popup è un link all'oggetto a cui fa capo il marker [default 1].
  - show_filter_select = checkbox: se si mette il segno di spunta mostra un menù a tendina che permette di filtrare per stato i marker (i marker senza stato non sono soggetti a filtro) [default 0]
- - json_area_file_name = nome del file json (compresa estensione .json) dove sono indicati i punti di un'area che si vuole mostrare in chiaro. Il file si deve trovare in "design/standard/javascript/json/"
- - data_source = se valorizzato prende i valori in formato json da un URL esterno
-	
+ - json_area_file_name = mostra in chiaro solo l'area delineata dai punti indicati in formato json nel file indicato (compreso di estensione: es "area-trentino.json"). Il file si deve trovare in "design/standard/javascript/json/"
+
 =================================
  Gestione stato marker
 =================================
@@ -47,30 +46,19 @@ posizionati nella directory "design/javascript/images/markers" e devono essere i
 
 Di default l'estensione mette a disposizione 11 icone di diverso colore, complete di ombra:
 
-    - default-azure
-    - default-black
-    - default-blue
-    - default-brown
-    - default-gray
-    - default-green
-    - default-orange
-    - default-pink
-    - default-red
-    - default-violet
-    - default-yellow
+- default-azure
+- default-black
+- default-blue
+- default-brown
+- default-gray
+- default-green
+- default-orange
+- default-pink
+- default-red
+- default-violet
+- default-yellow
 
 Se non viene associato alcuno stato, viene usata l'icona di default di openstreetmap.
-
-Se si crea uno stato cn codice "00" e lo si associa ad un marker, questo non sarà visibile sulla mappa.
-
-=================================
- Legenda stato marker
-=================================
-
-Gli stati utilizzati (cioè associati ai marker) vanno a comporre la legenda degli status, con icona, descrizione e numerosità.
-Gli stati non utilizzati non appaiono nella legenda. Cliccando su ogni voce della legenda viene applicato un filtro per
-quello stato, cioè vengono mostrati solo i marker che hanno quello stato. I marker senza stato non sono soggetti a filtro
-e rimangono sempre sulla mappa. Non si puà filtrare per i marker con stato "00".
 
 
 =================================
@@ -79,20 +67,3 @@ e rimangono sempre sulla mappa. Non si puà filtrare per i marker con stato "00"
 
  - ocutils (non obbligatorio fintanto che ocutils non diventa un'estensione, per ora le funzionalità sono nella classe OCGenericUtils.php)
  - ocbootstrap (non obbligatorio, il template di default però usa classi CSS di ocbootstrap)
- 
-
-=================================
- Changelogs
-=================================
-
-(v 1.3)
- - Aggiunto attributo data_source
- - Ordinamento della lista dei markers ereditato dall'ordinamento di backend
- - "overflow auto" su lista dei markers con height uguale al "map_height"
- 
-(v 1.2)
- - Introdotta gestione status dei marker
- - Introdotta possibilità di mostrare in chiaro solo un'area definita dall'attributo "json_area_file_name"
- 
-(v 1.0)
- - Prima release
